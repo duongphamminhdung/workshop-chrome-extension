@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>row 1</h1>
-<h1>row 2</h1>
-<h1>row 3</h1>
-<h1>row 4</h1>
+<p>row 1</p>
+<p>row 2</p>
+<p>row 3</p>
+<p>row 4</p>
 <h1>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
 <input type="text" id="input1" name="name" required
        minlength="4" maxlength="8" size="10">
-<button onclick="cheesify()">print input</button>
+<button onclick="printInput()">print input</button>
 
 <script>
-    function cheesify() {
+    function printInput() {
         var input = document.getElementById("input1");
         console.log(input.value)
     }
