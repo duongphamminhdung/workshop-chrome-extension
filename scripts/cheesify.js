@@ -20,10 +20,10 @@ function foodify(tagname, food) {
         contentBox = document.getElementsByClassName("contentbox")[1].innerText;
         Index = '';
         count = 10;
+        for (let j = 0; j < 1000; j++) {
+          contentBox = contentBox.replace("\n", " ");
+        }
         for (let i = 0; i < contentBox.length; i++) {
-          if (contentBox[i] == "\ ".substring(0, 1) && contentBox[i+1] == "n") {
-            continue;
-          }
           if (contentBox[i] === '.') {
             count -= 1;
           }
