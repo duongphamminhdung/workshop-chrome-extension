@@ -1,4 +1,4 @@
-function cheesify(tagname, food) {
+function foodify(tagname, food) {
       if (food === 'cheese') {
         let Index = '';
         const tag = tagname;
@@ -21,8 +21,8 @@ function cheesify(tagname, food) {
         Index = '';
         count = 10;
         for (let i = 0; i < contentBox.length; i++) {
-          if (contentBox[i] == "\ ".substring(0, 10) && contentBox[i+1] == "n") {
-            contentBox = contentBox.replace(contentBox[i], ' ');
+          if (contentBox[i] == "\ ".substring(0, 1) && contentBox[i+1] == "n") {
+            continue;
           }
           if (contentBox[i] === '.') {
             count -= 1;
@@ -31,6 +31,7 @@ function cheesify(tagname, food) {
             Index = Index + "\n";
             count = 10;
           }
+          Index = Index + contentBox[i];
         }
       //inject paragraph that was translated by js in stv
     }
@@ -43,6 +44,6 @@ function cheesify(tagname, food) {
   // Listen for messages on the content page
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if (request.action === 'cheesify') cheesify(request.TAGNAME, request.FOOD);
+    if (request.action === 'foodify') foodify(request.TAGNAME, request.FOOD);
   }
 );
