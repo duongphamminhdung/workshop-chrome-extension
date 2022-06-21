@@ -14,3 +14,20 @@ document.querySelector('#cheesify').addEventListener('click', event => prepareFo
 document.querySelector('#milkify').addEventListener('click', event => prepareForSending('milk'));
 
 // TODO: Add an event listener to trigger the function above when clicking the 'Cheesify' button
+
+chrome.runtime.onMessage.addListener(
+  function(arg, sender, sendResponse) {
+    console.log("popup received message");
+    if (arg?.action === "download")
+    {
+      var blob = new Blob([arg.fileDownload], {type: "text/plain"});
+      var url = URL.createObjectURL(blob);
+      chrome.downloads.download({
+         url: url,
+         filename: "content.txt",
+      });
+      alert("Completed downloading");
+
+     }
+   }
+);

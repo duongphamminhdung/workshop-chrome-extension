@@ -7,7 +7,9 @@
      "permissions": [
       "tabs",
       "clipboardWrite",
-      "storage"
+      "storage",
+      "downloads",
+      "<all_urls>"
     ],
      "icons": {
        "16": "images/icon16.png",

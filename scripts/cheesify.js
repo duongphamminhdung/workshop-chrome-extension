@@ -37,7 +37,7 @@ function foodify(tagname, food) {
     }
     
     console.log(Index);
-    alert("Open console to see the result");
+    downloadToFile(Index);
 
   }
 // TODO: Write a function to listen for messages on the content page using chrome.runtime.onMessage
@@ -47,3 +47,8 @@ chrome.runtime.onMessage.addListener(
     if (request.action === 'foodify') foodify(request.TAGNAME, request.FOOD);
   }
 );
+
+function downloadToFile(text) {   
+  chrome.runtime.sendMessage({action: "download", fileDownload: text});
+  console.log("download request sent")
+}
