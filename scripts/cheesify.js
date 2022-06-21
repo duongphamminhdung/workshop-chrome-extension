@@ -1,11 +1,11 @@
 function foodify(tagname, food) {
+      let Index = '';
       if (food === 'cheese') {
-        let Index = '';
         const tag = tagname;
-        console.log(tag)
+        console.log(tag);
         const collection = document.getElementsByTagName(tag);
         for (let i = 0; i < collection.length; i++) {
-          temp = collection[i].innerHTML;
+          temp = collection[i].innerText;
           console.log(temp);
           if (temp.includes('<') ) {
           continue;
@@ -18,7 +18,6 @@ function foodify(tagname, food) {
 
       else if (food === 'milk') {
         contentBox = document.getElementsByClassName("contentbox")[1].innerText;
-        Index = '';
         count = 10;
         for (let j = 0; j < 1000; j++) {
           contentBox = contentBox.replace("\n", " ");
