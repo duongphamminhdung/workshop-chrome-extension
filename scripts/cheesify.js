@@ -1,6 +1,6 @@
 function foodify(tagname, food) {
       let Index = '';
-      if (food === 'cheese') {
+      if ((food === 'cheese') || (food == 'download')) {
         const tag = tagname;
         console.log(tag);
         const collection = document.getElementsByTagName(tag);
@@ -36,8 +36,10 @@ function foodify(tagname, food) {
     }
     
     console.log(Index);
-    downloadToFile(Index);
-
+    alert("DONE")
+    if (food === 'download'){
+      downloadToFile(Index);  
+    }
   }
 // TODO: Write a function to listen for messages on the content page using chrome.runtime.onMessage
   // Listen for messages on the content page

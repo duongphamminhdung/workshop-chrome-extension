@@ -12,7 +12,7 @@ function prepareForSending(food) {
 // Trigger the function above when clicking the 'Cheesify' button
 document.querySelector('#cheesify').addEventListener('click', event => prepareForSending('cheese'));
 document.querySelector('#milkify').addEventListener('click', event => prepareForSending('milk'));
-
+document.querySelector('#download').addEventListener('click', event => prepareForSending('download'));
 // TODO: Add an event listener to trigger the function above when clicking the 'Cheesify' button
 
 chrome.runtime.onMessage.addListener(
